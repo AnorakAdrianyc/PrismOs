@@ -9,9 +9,15 @@ const FILES = [
   "public/paper-scenario.js",
   "lib/sources.mjs",
   "server.mjs",
+  "api/sources.mjs",
 ];
 
-const LESSON_FILES = ["public/index.html", "public/app.js", "public/paper-scenario.js"];
+const LESSON_FILES = [
+  "public/index.html",
+  "public/app.js",
+  "public/paper-scenario.js",
+  "api/sources.mjs",
+];
 
 const REQUIRED = [
   "https://mainichi.jp/english/articles/20261113/p2g/00m/0bu/048000c",

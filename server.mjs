@@ -9,7 +9,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildSourceReport } from "./lib/sources.mjs";
+import { buildSourceReport, failedSourceReport } from "./lib/sources.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)));
 const publicDir = path.join(root, "public");
@@ -67,20 +67,7 @@ const server = createServer(async (req, res) => {
     } catch (error) {
       const message = error instanceof Error ? error.message : "unknown error";
       console.error("source report failed:", message);
-      const body = JSON.stringify({
-        fetchedAt: new Date().toISOString(),
-        paperBookUsesFeeds: false,
-        boj: {
-          status: "gap",
-          message: "The reference report failed before a Bank of Japan figure was read. No rate was filled in.",
-          points: [],
-        },
-        ecb: {
-          status: "gap",
-          message: "The reference report failed before an ECB figure was read. No cross was filled in.",
-          points: [],
-        },
-      });
+      const body = JSON.stringify(failedSourceReport());
       res.writeHead(200, { "content-type": "application/json; charset=utf-8" });
       res.end(req.method === "HEAD" ? undefined : body);
     }

@@ -37,6 +37,17 @@ PORT=4180 npm start
 
 `npm test` does not use the network. The Bank of Japan and ECB figures appear only when the server can reach those sites. The news card, the paper book, and the tutor still work if the feeds do not.
 
+## Deploy on Vercel
+
+`npm start` stays the local command. Vercel does not run `server.mjs`. The deployment is the static lesson plus one function, still with no API keys and no install dependencies.
+
+- `public/` is the site. `vercel.json` sets `outputDirectory` to `public`, so `/` is `public/index.html`. `/styles.css`, `/app.js`, and `/paper-scenario.js` stay at those paths.
+- `api/sources.mjs` is the serverless function for `GET /api/sources`. It calls `buildSourceReport()` in `lib/sources.mjs`. That is the same Bank of Japan and ECB lookup the local server uses. The paper book does not use those feeds. Interactive Brokers is not called, and there is no order route.
+
+No environment variables. In the Vercel project, leave the framework as Other and leave the build command empty. The repo’s `engines.node` is `>=20`. Vercel’s available majors are 22, 24, and 26 (Node.js 20 is no longer offered there); a range of `>=20` selects a current runtime. The function only uses `fetch` and ESM, which those versions provide.
+
+After the project exists, deploy this branch. The lesson page and `/api/sources` should both answer.
+
 ## What you should see
 
 **Signal.** Headline: “Japan to take appropriate action to stem yen slide if required: Katayama.” Source: The Mainichi (Kyodo), November 13, 2026. The card quotes the page and links to it. The excerpt was checked on 14 November 2026 and is not re-downloaded on each run. If the live page disagrees with the card, trust the page.
@@ -72,7 +83,9 @@ Multi-source fusion, live execution, position sizing, backtests offered as proof
 
 ## Layout
 
-- `public/` — the page, the classroom rule, and the browser code
+- `public/` — the page, the classroom rule, and the browser code. This is also the Vercel static output.
 - `lib/sources.mjs` — Bank of Japan and ECB fetchers, plus the explicit skip for TradingView quotes and Interactive Brokers
-- `server.mjs` — static files and `/api/sources` only. Fixed hosts. Redirects are rejected.
+- `server.mjs` — local static files and `/api/sources` only. Fixed hosts. Redirects are rejected.
+- `api/sources.mjs` — the Vercel function for `GET /api/sources`. It reuses `lib/sources.mjs`.
+- `vercel.json` — serves `public/` at `/` and keeps the function config next to it
 - `test/` — paper arithmetic, parsers, “a failed feed stays empty”, and a copy check against trade instructions
