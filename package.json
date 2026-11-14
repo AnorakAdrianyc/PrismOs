@@ -1,0 +1,14 @@
+{
+  "name": "prismos",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PrismOS — a one-page educational paper-trading sandbox for BUHack 2.0. No live orders.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PrismOS — paper-trading lesson (USD/JPY)</title>
+    <meta
+      name="description"
+      content="PrismOS is an educational paper-trading sandbox. One public news report, one simulated USD/JPY move, one plain-language explanation. Not real money and not financial advice."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <p class="banner">
+      <strong>Educational sandbox.</strong>
+      Paper trading only. Not real money. Not financial advice. No orders are sent.
+      BUHack 2.0 demo, not a live trading system.
+    </p>
+
+    <header class="wrap masthead">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <path d="M8 40 L24 6 L40 40" fill="none" stroke="currentColor" stroke-width="2"></path>
+          <path d="M16 28 H32" stroke="#1e3a5f" stroke-width="2"></path>
+          <path d="M14 33 H34" stroke="#9a4d12" stroke-width="2"></path>
+          <path d="M12 38 H36" stroke="#1f4d3a" stroke-width="2"></path>
+        </svg>
+        <p class="eyebrow">BUHack 2.0 · FinTech · paper lesson</p>
+      </div>
+      <h1 id="content" tabindex="-1">PrismOS</h1>
+      <p class="lede">
+        One public report. One simulated yen move. One explanation of the link.
+        The chain is here so you can audit it. It is not a forecast.
+      </p>
+      <nav aria-label="Lesson">
+        <ol role="list">
+          <li><a href="#signal">1. Signal</a></li>
+          <li><a href="#sandbox">2. Paper move</a></li>
+          <li><a href="#tutor">3. Tutor</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <ol class="chain" role="list" aria-label="Traceability chain">
+        <li>Signal: The Mainichi / Kyodo, 13 Nov 2026</li>
+        <li>Rule: short-cover-reading, −1.00 yen, classroom constant</li>
+        <li>Paper result: −10,000 yen on 10,000 US dollars</li>
+        <li>Tutor: same article, no instruction to act</li>
+      </ol>
+
+      <section id="signal" class="card" aria-labelledby="signal-heading">
+        <p class="step">Step 1</p>
+        <h2 id="signal-heading">Public signal</h2>
+        <p class="source-line">
+          The Mainichi · Kyodo · November 13, 2026 (Mainichi Japan)<br />
+          <a href="https://mainichi.jp/english/articles/20261113/p2g/00m/0bu/048000c"
+            >https://mainichi.jp/english/articles/20261113/p2g/00m/0bu/048000c</a
+          >
+        </p>
+        <h3>Japan to take appropriate action to stem yen slide if required: Katayama</h3>
+        <p>
+          Excerpt checked against that public page on 14 November 2026. This demo does not
+          re-download the article. If you open the link and the wording differs, the page
+          wins and this card is stale.
+        </p>
+        <blockquote>
+          <p>
+            Finance Minister Satsuki Katayama said Friday that Japan will continue to work
+            closely with the United States and take appropriate action in response to the
+            yen's depreciation if necessary.
+          </p>
+          <p>
+            “We have recently seen sharp, one-sided movements in the foreign exchange
+            market,” Katayama said after the dollar climbed above 160 yen in New York
+            trading overnight, a level not seen since early September. “We will respond
+            appropriately.”
+          </p>
+        </blockquote>
+        <p>The same article also says:</p>
+        <ul>
+          <li>
+            The yen has come under renewed selling pressure amid growing expectations that
+            the Federal Reserve will step up the pace of rate hikes to curb inflation, with
+            investors anticipating a widening interest rate differential between the two
+            countries.
+          </li>
+          <li>
+            Katayama stressed staying in close contact with the United States. The article
+            says both countries had issued statements reaffirming close coordination on
+            foreign exchange.
+          </li>
+          <li>
+            The article says U.S. Treasury Secretary Scott Bessent has repeatedly expressed
+            a preference for a stronger yen and said exchange rates should reflect economic
+            fundamentals.
+          </li>
+          <li>
+            The article says Prime Minister Sanae Takaichi and President Donald Trump shared
+            that view at their summit in September.
+          </li>
+        </ul>
+        <p class="note">
+          The only news signal on this page is that article. The rates further down are
+          official reference prints. They are not a second story, and they are not merged
+          into a trading signal.
+        </p>
+      </section>
+
+      <section id="sandbox" class="card" aria-labelledby="sandbox-heading">
+        <p class="step">Step 2</p>
+        <h2 id="sandbox-heading">Simulated USD/JPY</h2>
+        <p>
+          Paper book only. The line below is a classroom rule named
+          <code>short-cover-reading</code>. It is labelled simulated and educational.
+          It is not a live order, not a broker fill, and not a prediction.
+        </p>
+
+        <h3>Before and after</h3>
+        <div class="split">
+          <p>
+            <span class="kicker">Lesson anchor</span>
+            <strong class="figure">160</strong>
+            <span class="unit">yen per dollar</span>
+          </p>
+          <p>
+            <span class="kicker">Scenario mark</span>
+            <strong class="figure">159</strong>
+            <span class="unit">yen per dollar</span>
+          </p>
+        </div>
+        <p>
+          The anchor is the whole number in the article’s phrase “above 160”. The article
+          does not say the rate was exactly 160.00. The scenario mark is that anchor plus a
+          classroom constant of −1.00 yen. The constant is round so the arithmetic is easy
+          to check. It was not estimated from the Bank of Japan, the ECB, or TradingView.
+          The article does not say where USD/JPY went after the remarks.
+        </p>
+
+        <figure class="chart-block">
+          <figcaption>
+            Simulated path only. Replay redraws this classroom line. It does not refresh a market.
+          </figcaption>
+          <svg id="scenario-chart" viewBox="0 0 640 240" aria-hidden="true" focusable="false"></svg>
+          <div class="chart-actions">
+            <button type="button" id="replay">Replay the simulated path</button>
+            <p id="scenario-live" aria-live="polite"></p>
+          </div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <caption>
+              Paper result for one illustrative book. Money in this table does not exist.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Pair</th>
+                <td>USD/JPY</td>
+              </tr>
+              <tr>
+                <th scope="row">Paper book</th>
+                <td>10,000 US dollars measured against yen</td>
+              </tr>
+              <tr>
+                <th scope="row">Lesson anchor</th>
+                <td>160 yen per dollar</td>
+              </tr>
+              <tr>
+                <th scope="row">Classroom constant</th>
+                <td>−1.00 yen per dollar</td>
+              </tr>
+              <tr>
+                <th scope="row">Scenario mark</th>
+                <td>159 yen per dollar</td>
+              </tr>
+              <tr>
+                <th scope="row">Yen result</th>
+                <td>10,000 × (159 − 160) = −10,000 yen</td>
+              </tr>
+              <tr>
+                <th scope="row">Dollar result</th>
+                <td>−10,000 ÷ 159 = −62.89 USD when rounded to the cent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          In desk jargon this book is long dollars and short yen: the yen result is negative
+          when the scenario mark is lower. The side exists so the arithmetic has a sign.
+          It is not a position to copy, and it is not a suggestion to hold dollars or yen.
+          Dollars are converted at the scenario mark. That is bookkeeping for the lesson.
+        </p>
+        <p class="note">
+          A lower USD/JPY is the usual way a “short-covering” reading would show up: traders
+          who had already sold yen later repurchase yen to close that position, and the pair
+          prints lower. This page describes that habit. It does not tell you to repurchase
+          yen or dollars.
+        </p>
+
+        <h3>Reference feeds that are not the paper fill</h3>
+        <p>
+          These panels are context. None of these numbers enter the paper table above.
+          If a feed fails, the panel says so and stays empty.
+        </p>
+
+        <article class="feed" aria-labelledby="boj-heading">
+          <h4 id="boj-heading">Bank of Japan</h4>
+          <p>
+            Direct series <code>FXERD04</code>, “US.Dollar/Yen Spot Rate at 17:00 in JST,
+            Tokyo Market”, from the public
+            <a href="https://www.stat-search.boj.or.jp/ssi/mtshtml/fm08_d_1_en.html"
+              >Bank of Japan Tokyo dollar/yen table</a
+            >.
+            No API key. These Tokyo rates are not the New York price in the article, and they
+            are not the simulated path. If the latest date is before 13 November 2026, that
+            later day is left blank.
+          </p>
+          <p id="boj-status" aria-live="polite">No Bank of Japan figure is shown yet.</p>
+          <div id="boj-body"></div>
+        </article>
+
+        <article class="feed" aria-labelledby="ecb-heading">
+          <h4 id="ecb-heading">European Central Bank</h4>
+          <p>
+            The direct key <code>D.JPY.USD.SP00.A</code> on
+            <a href="https://data-api.ecb.europa.eu/service/data/EXR/D.JPY.USD.SP00.A?format=csvdata"
+              >data-api.ecb.europa.eu</a
+            >
+            returns no series. When both euro reference rates load (US dollars per euro, and
+            yen per euro, at 14:15 CET), this page divides them. The quotient is arithmetic
+            on two published rates. It is not a New York print and not the paper fill.
+          </p>
+          <p id="ecb-status" aria-live="polite">No ECB cross is shown yet.</p>
+          <div id="ecb-body"></div>
+        </article>
+
+        <article class="feed" aria-labelledby="tv-heading">
+          <h4 id="tv-heading">TradingView</h4>
+          <p>
+            TradingView does not offer a public quote API, so this server never asks it for a
+            price. The frame below is their free USD/JPY widget
+            (<code>FX:USDJPY</code>), loaded in your browser. A number inside the frame stays
+            in the frame. If the widget does not load, the gap stays empty.
+          </p>
+          <p>
+            <a href="https://www.tradingview.com/symbols/USDJPY/"
+              >Public USD/JPY page on TradingView</a
+            >
+          </p>
+          <p id="tv-status" aria-live="polite">Waiting for the TradingView widget.</p>
+          <div id="tv-container" class="tradingview-widget-container"></div>
+        </article>
+
+        <article class="feed" aria-labelledby="ib-heading">
+          <h4 id="ib-heading">Interactive Brokers</h4>
+          <p id="ib-status">
+            Not called. Interactive Brokers market data and paper accounts require an
+            authenticated IBKR Pro login (Client Portal, TWS, or FIX). This demo has no
+            login, sends no request to Interactive Brokers, and has no order route. The
+            fallback is the classroom book above, plus the Bank of Japan or ECB panels when
+            those answer.
+          </p>
+          <p>
+            <a href="https://www.interactivebrokers.com/support/faq/articles/614720743"
+              >Interactive Brokers FAQ on API access</a
+            >
+          </p>
+        </article>
+      </section>
+
+      <section id="tutor" class="card" aria-labelledby="tutor-heading">
+        <p class="step">Step 3</p>
+        <h2 id="tutor-heading">Tutor</h2>
+        <p class="note">
+          Explanation only. This section cites the same Mainichi article. It does not tell
+          you to buy or sell, and it does not name a level to aim at.
+        </p>
+
+        <h3>Why this page drew the line lower</h3>
+        <p>
+          The Mainichi article, dated November 13, 2026, reports two ideas that pull in
+          different directions. The sandbox illustrates only one of them, and it labels that
+          illustration as a reading of the words.
+        </p>
+        <p>
+          The article says the yen was under renewed selling pressure because people expected
+          the Federal Reserve to step up rate hikes, which the article says would widen the
+          interest-rate gap between the United States and Japan. That is the article’s context
+          for a weaker yen, which would be a higher USD/JPY. PrismOS does not turn that
+          sentence into a path.
+        </p>
+        <p>
+          The article also quotes Finance Minister Satsuki Katayama. She said Japan will take
+          appropriate action if the yen’s depreciation requires it, after “sharp, one-sided”
+          moves, and after the dollar climbed above 160 yen in New York trading overnight, a
+          level the article says had not been seen since early September. She said, “We will
+          respond appropriately.”
+        </p>
+        <p>
+          A common reading of a warning like that is short covering: traders who had already
+          sold yen later repurchase yen to close the position, in case the authorities act.
+          That repurchase would show up as a lower USD/JPY. The simulated path is a picture of
+          that habit, one yen lower than the article’s round “160”, so you can see the sign of
+          the paper result. The article does not say this happened. It does not say Japan
+          intervened. It does not name a rate the government wants.
+        </p>
+        <p>
+          Check the official panels before you treat the picture as history. Tokyo 17:00,
+          the ECB’s 14:15 CET euro fixings, and New York overnight are different clocks. If a
+          panel says the article’s date is missing, believe the gap.
+        </p>
+
+        <h3>How to check the source</h3>
+        <ol>
+          <li>
+            Open
+            <a href="https://mainichi.jp/english/articles/20261113/p2g/00m/0bu/048000c"
+              >the Mainichi article</a
+            >. Confirm the date line and the Kyodo credit. If the wording differs from this
+            card, trust the page.
+          </li>
+          <li>
+            Separate the headline from the quote. The headline is the paper’s summary. The
+            quotation marks are what the article attributes to Katayama.
+          </li>
+          <li>
+            List what the quote does not say. It does not confirm an intervention. It does
+            not give you a price. It does not instruct a reader.
+          </li>
+          <li>
+            Open the Bank of Japan series and the ECB series from the links in this page.
+            Compare dates before you compare numbers.
+          </li>
+          <li>
+            If the TradingView frame is blank, leave it blank. Do not type a price from
+            somewhere else into this lesson.
+          </li>
+        </ol>
+
+        <h3>Pause before you trust it</h3>
+        <p>
+          Pattern to notice: a named official, a round number (160), and urgent wording
+          (“sharp”, “one-sided”). Real wire copy looks like that. So do posts that want you
+          to act before you think.
+        </p>
+        <p>Three questions are enough to slow down: Who published it? What is the date? Which sentence is a quote, and which sentence is missing?</p>
+        <p>
+          One report is one report. PrismOS keeps the chain visible — article, classroom
+          rule, paper result, explanation — so you can audit it. A chain you can audit is
+          not a chain that can see the future. Nothing on this page is financial advice.
+        </p>
+      </section>
+    </main>
+
+    <footer class="wrap site-footer">
+      <h2>Sources on this page</h2>
+      <ul>
+        <li>
+          News signal:
+          <a href="https://mainichi.jp/english/articles/20261113/p2g/00m/0bu/048000c"
+            >The Mainichi / Kyodo, November 13, 2026</a
+          >. Checked 14 November 2026. Not re-fetched at runtime.
+        </li>
+        <li>
+          Bank of Japan Time-Series Data Search, database FM08, series FXERD04.
+          <a href="https://www.stat-search.boj.or.jp/info/api_manual_en.pdf">API manual</a>.
+          No key.
+        </li>
+        <li>
+          European Central Bank Data Portal, EXR <code>D.USD.EUR.SP00.A</code> and
+          <code>D.JPY.EUR.SP00.A</code>, crossed on this server.
+          <a href="https://data.ecb.europa.eu/help/api/data">API help</a>.
+        </li>
+        <li>
+          TradingView free widget only.
+          <a href="https://www.tradingview.com/widget/">Widget docs</a>.
+          No quote request from this server.
+        </li>
+        <li>
+          Interactive Brokers: not called.
+          <a href="https://www.interactivebrokers.com/support/faq/articles/614720743">FAQ</a>.
+        </li>
+      </ul>
+      <p>
+        PrismOS is a lightweight BUHack 2.0 demo for an educational, risk-free market
+        simulator. It is not a live trading system.
+      </p>
+    </footer>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
