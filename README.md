@@ -1,4 +1,49 @@
-# PrismOS
+#### PrismOS
+
+> PrismOS is an integrated FinTech, AI, and cognitive-conditioning platform that pairs a semi-automated Open-Source Intelligence (OSINT) currency trading sandbox with neuroscience-backed learning to equip underprivileged youth and the general public with the critical thinking skills needed to thrive in an AI-driven economy. By turning live global OSINT signals and simulated foreign exchange (FX) movements into interactive, risk-free lessons, the platform replaces passive digital consumption ("brain rot") with active metacognition, pattern recognition, and real-world financial literacy.
+
+## Full Project Description (BU Hack 2.0 Submission)
+
+### The Challenge
+
+Everyday citizens and underprivileged youth face a widening gap in AI and financial literacy while navigating an attention economy designed around passive scrolling and algorithmic distraction. At the same time, real-world macroeconomic shifts and financial misinformation increasingly shape personal purchasing power, yet learners rarely have safe, transparent tools to see how global information drives market behavior.
+
+### Our Solution
+
+PrismOS bridges algorithmic quantitative finance with accessible public education through a unified "Live Sandbox" architecture:
+
+- **Risk-Free OSINT Currency Simulation Sandbox:** Rather than exposing learners or minors to real-money trading risks, the platform runs a semi-automated, OSINT-driven currency algorithm in paper-trading simulation mode. Users watch in real time as verified global events and central bank or geopolitical signals trigger simulated FX movements, paired with plain-language AI explanations.
+- **Neuroscience & Anti-Brain-Rot Conditioning:** Curriculum modules integrate neuroscience principles—specifically metacognition, pattern recognition, and structured cognitive conditioning—to counteract shortened attention spans and train learners to verify sources and spot financial scams.
+- **Inclusive FinTech & AI Literacy:** Designed for both the general public and underserved youth communities, the platform demystifies how AI models ingest raw open-source data to make decisions.
+
+## Perpetual Sustainability & Community Impact
+
+Designed to evolve beyond BU Hack 2.0 into an interdisciplinary community capstone (GCAP3055) partnering with local Hong Kong youth organizations, the platform is architected around four transdisciplinary sustainability pillars:
+
+- **Technical Autonomy:** Automated DevOps and MLOps pipelines for resilient OSINT ingestion and model execution.
+- **Financial Autonomy:** Endowment and treasury operations designed to sustain free public access over time.
+- **Decentralized Delivery:** Modular, adaptable system architecture capable of scaling across schools, NGOs, and self-paced learners.
+- **Legal & Organizational Continuity:** Clear governance frameworks ensuring ethical AI education, regulatory safety, and long-term stewardship.
+
+## Name
+
+**PrismOS**
+
+## Tool Summary
+
+A tool based off of an integrated platform to teach the general public and underprivileged kids about FinTech, AI, neuroscience, and essential skills to thrive in this new age—such as metacognition, pattern recognition, and anti-brain-rot mechanisms x conditioning to survive this new world—combined with my semi-automated currency algorithm trading platform that uses OSINT.
+
+## Business Model
+
+### Transdisciplinary Sustainability Pillars
+
+1. **Technical Autonomy (DevOps & MLOps)**
+2. **Financial Autonomy (Endowment & Treasury Operations)**
+3. **Decentralized Delivery (Systems Adaptibility)**
+4. **Legal & Organizational Continuity (Governance)**
+
+## Autonomous Operations, System Architecture, and Perpetual Governance Framework
+#### PrismOS Demo
 
 PrismOS is a one-page educational sandbox for **BUHack 2.0 (FinTech)**. It walks a single path you can audit:
 
